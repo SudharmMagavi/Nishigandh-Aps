@@ -83,7 +83,20 @@ async function addSampleProducts() {
 
 
 // 6. Start the Server
+// app.listen(PORT, () => {
+//     console.log(`Server is running on http://localhost:${PORT}`);
+//     addSampleProducts(); // Add sample data when the server starts (if the DB is empty)
+// });
+
+
+ 6.// Start the Server (for local development)
+// We comment this out for Vercel deployment.
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
-    addSampleProducts(); // Add sample data when the server starts (if the DB is empty)
+    addSampleProducts();
 });
+
+
+// Export the app for Vercel
+module.exports = app;
