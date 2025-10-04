@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Nishigandh Aps</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <header class="site-header ">
+        <div class="container navbar ">
+            <div class="brand-logo">
+                <a href="index.html" class="logo-image-link" aria-label="Home">
+                    <img src="Images/logonew.png" alt="Nishigandh Aps Logo"
+                        class="logo-image">
+                </a>
+                <!-- <a href="#" class="logo-text">Nishigandh Aps</a> -->
+            </div>
+
+            <nav class="nav-links-desktop">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="#">New Launches</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-icons">
+                <a href="#" aria-label="Search">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="cart.html" aria-label="Shopping Cart">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
+        </div>
+
+        <nav class="nav-links-mobile">
+            <ul>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">New Launches</a></li>
+                <li><a href="#">Best Sellers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="cart-page-container">
+        <h1>Shopping Cart</h1>
+        <div class="cart-layout">
+
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&auto=format&fit=crop"
+                        alt="Ragini Halter Neck Kurti" class="item-image">
+                    <div class="item-details">
+                        <h3>Ragini Halter Neck Kurti</h3>
+                        <p>Size: Medium</p>
+                        <p class="item-price">Rs. 899.00</p>
+                    </div>
+                    <div class="item-quantity">
+                        <label for="qty1">Qty:</label>
+                        <input type="number" id="qty1" value="1" min="1">
+                    </div>
+                    <button class="remove-item" aria-label="Remove item">&times;</button>
+                </div>
+
+                <div class="cart-item">
+                    <img src="https://images.unsplash.com/photo-1617922001434-c7a421479b12?w=500&auto=format&fit=crop"
+                        alt="The Sagar Blue Shirt" class="item-image">
+                    <div class="item-details">
+                        <h3>The Sagar Blue Shirt</h3>
+                        <p>Size: Large</p>
+                        <p class="item-price">Rs. 799.00</p>
+                    </div>
+                    <div class="item-quantity">
+                        <label for="qty2">Qty:</label>
+                        <input type="number" id="qty2" value="1" min="1">
+                    </div>
+                    <button class="remove-item" aria-label="Remove item">&times;</button>
+                </div>
+            </div>
+
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>Rs. 1,698.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>Free</span>
+                </div>
+                <div class="summary-total">
+                    <span>Total</span>
+                    <span>Rs. 1,698.00</span>
+                </div>
+                <a href="#" class="btn btn-checkout">Proceed to Checkout</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-column">
+                <h3>Nishigandh Aps</h3>
+                <p>Fashion that tells a story. Curated collections for the modern individual.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Collections</h3>
+                <ul>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">New Launches</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Get updates on new arrivals and special offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Nishigandh All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

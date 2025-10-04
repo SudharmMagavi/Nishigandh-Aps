@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Nishigandh Aps</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container navbar">
+            <div class="brand-logo">
+                <a href="index.html" class="logo-image-link" aria-label="Home"><img src="Images/logonew.png" alt="Nishigandh Aps Logo" class="logo-image"></a>
+            </div>
+            <nav class="nav-links-desktop">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="#">New Launches</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="#" aria-label="Search" id="search-toggle-btn"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></a>
+                <a href="cart.html" aria-label="Shopping Cart"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"></path></svg></a>
+            </div>
+            <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
+        </div>
+        <nav class="nav-links-mobile">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="#">New Launches</a></li>
+                <li><a href="#">Best Sellers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="product-detail-page">
+        <div class="container">
+            <div class="product-detail-layout">
+                <div class="product-gallery">
+                    <img src="" alt="Main product image" class="main-product-image" id="product-image">
+                    <div class="thumbnail-images" id="thumbnail-gallery">
+                        </div>
+                </div>
+    
+                <div class="product-details">
+                    <h1 class="product-title" id="product-title">Loading...</h1>
+                    <p class="product-price" id="product-price"></p>
+                    <p class="product-short-desc" id="product-description"></p>
+                    
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label for="size">Size:</label>
+                            <select name="size" id="size">
+                                <option value="s">Small</option>
+                                <option value="m">Medium</option>
+                                <option value="l">Large</option>
+                                <option value="xl">XL</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" id="quantity" value="1" min="1">
+                        </div>
+                    </div>
+    
+                    <button class="btn add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-column">
+                <h3>Nishigandh Aps</h3>
+                <p>Fashion that tells a story. Curated collections for the modern individual.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Collections</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">New Launches</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Get updates on new arrivals and special offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; Nishigandh Aps All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

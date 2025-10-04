@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishigandh Aps - Inspired Fashion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body>
+    <header class="site-header animate__animated animate__fadeInDown">
+        <div class="container navbar">
+            <div class="brand-logo">
+                <a href="#" class="logo-image-link" aria-label="Home">
+                    <img src="Images/logonew.png" alt="Nishigandh Aps Logo" class="logo-image">
+                </a>
+            </div>
+
+            <nav class="nav-links-desktop">
+                <ul>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">New Launches</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-icons">
+                <a href="#" aria-label="Search" id="search-toggle-btn">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+                </a>
+                <a href="cart.html" aria-label="Shopping Cart">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
+        </div>
+
+        <nav class="nav-links-mobile">
+            <ul>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">New Launches</a></li>
+                <li><a href="#">Best Sellers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="search-overlay">
+        <button class="close-search-btn" aria-label="Close search">&times;</button>
+        <form action="/search" class="search-overlay-form">
+            <input type="search" class="search-overlay-input" placeholder="Search for products..." autofocus>
+            <button type="submit" class="btn">Search</button>
+        </form>
+    </div>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1 class="animate__animated animate__fadeInUp">Welcome to Nishigandh</h1>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">Where Pinterest meets your Interest</p>
+                <a href="#" class="btn animate__animated animate__fadeInUp animate__delay-2s">Shop Latest Arrivals</a>
+            </div>
+        </section>
+
+        <section class="product-section">
+            <div class="container">
+                <h2 class="section-title">Latest Arrivals</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Images/women kurta" alt="Kusum Corset Top">
+                            <span class="sale-badge">Sale</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Women floral print Straight kurta</h3>
+                            <p class="price"><span class="original-price">Rs. 1,299.00</span> Rs. 699.00</p>
+                            <button class="btn-outline">Choose Options</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&auto=format&fit=crop"
+                                alt="Ragini Halter Neck Kurti">
+                            <span class="sale-badge">Sale</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Ragini Halter Neck Kurti women</h3>
+                            <p class="price"><span class="original-price">Rs. 1,699.00</span> Rs. 899.00</p>
+                            <button class="btn-outline">Choose Options</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Images/jeans" alt="Zivra Halter Neck Kurti">
+                            <span class="sale-badge">Sale</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Straight denim jeans womens </h3>
+                            <p class="price"><span class="original-price">Rs. 1,499.00</span> Rs. 899.00</p>
+                            <button class="btn-outline">Choose Options</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Images/ghagra" alt="The Sagar Blue Shirt">
+                            <span class="sale-badge">Sale</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Embroided Semi Stiched kurta </h3>
+                            <p class="price"><span class="original-price">Rs. 999.00</span> Rs. 799.00</p>
+                            <button class="btn-outline">Choose Options</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section container">
+            <div class="category-card">
+                <img src="Images/alekon-pictures-UuFX_dLxDSQ-unsplash.jpg" alt="Women Collections">
+                <div class="category-content">
+                    <h2>Women Collections</h2>
+                    <a href="#" class="btn-underline">Shop Now</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="Images/abolfazl-shaker-cCMHCsTkkj0-unsplash.jpg" alt="Men Collections">
+                <div class="category-content">
+                    <h2>Men Collections</h2>
+                    <a href="#" class="btn-underline">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-section">
+            <div class="container">
+                <p class="testimonial-text">"I absolutely loved everything about the kurti."</p>
+                <p class="testimonial-author">- Anjali Sharma</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-column">
+                <h3>Nishigandh Aps</h3>
+                <p>Fashion that tells a story. Curated collections for the modern individual.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Collections</h3>
+                <ul>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">New Launches</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Get updates on new arrivals and special offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; Nishigandh Aps All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

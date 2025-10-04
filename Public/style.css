@@ -1,0 +1,935 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #d4a373;
+    --secondary-color: #fefae0;
+    --dark-color: #3a3a3a;
+    --light-color: #ffffff;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Roboto', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+------------animations----------
+
+.animate__animated animate__fadeInUp{
+ --animate-duration: 800ms;
+  --animate-delay: 0.9s;
+}
+body {
+    font-family: var(--font-body);
+    background-color: #78aee3; /* Using a light gray from a previous step */
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+main {
+    margin-top: -108px; /* Changed from -80px */
+}
+main.homepage { /* Changed from 'main' */
+    margin-top: -108px;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.section-title {
+   text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background-color: #b98b5a;
+}
+
+.btn-outline {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    border: 1px solid var(--dark-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+/* --- Header & Navigation --- */
+.site-header {
+    background-color: transparent; /* Make it transparent by default */
+    box-shadow: none; /* Remove the initial shadow */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.site-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.613);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.5rem;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-image {
+    height: 60px;
+    width: 180px;
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--dark-color);
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+/* Sets the initial icon color to white */
+.site-header .nav-icons .icon {
+    color: var(--dark-color); /* This should also be black/dark */
+}
+/* Make links white ONLY on the homepage's transparent header */
+.home-page .site-header:not(.scrolled) .nav-links-desktop a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Changes the icon color to black ONLY when the header is scrolled */
+.site-header.scrolled .nav-icons .icon {
+    color: var(--dark-color);
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: color 0.4s ease;
+}
+
+/* --- Navigation Styles for Desktop --- */
+.nav-links-desktop ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links-desktop a {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    position: relative;
+    padding-bottom: 5px;
+    color: var(--dark-color);
+    transition: color 0.4s ease;
+    color: var(--dark-color); /* This should be black/dark */
+    transition: color 0.4s ease;
+
+}
+.site-header.scrolled .nav-links-desktop a {
+    color: var(--dark-color); /* This is the black/dark color from your theme */
+}
+
+.nav-links-desktop a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links-desktop a:hover::after {
+    width: 100%;
+}
+
+.nav-links-mobile {
+    display: none; /* Hide mobile menu on desktop */
+}
+
+.menu-toggle {
+    display: none; /* Hide hamburger on desktop */
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+#hero {
+   height: 100vh;
+    padding-top: 108px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-color);
+    position: relative; /* This is important */
+    overflow: hidden; /* Keeps sharp edges during transition */
+
+}
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Images/MainBGIMG.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Places it behind the hero text */
+    transition: opacity 1s ease-in-out, transform 10s linear;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: absolute; /* Changed from relative to absolute */
+    top: 50%;            /* Position from the top */
+    left: 50%;           /* Position from the left */
+    transform: translate(-50%, -50%); /* Crucial for perfect centering */
+    text-align: center;
+    color: var(--light-color); /* Ensure text is white for visibility */
+    max-width: 800px; /* Optional: limit width for better readability */
+    width: 90%;       /* Optional: responsive width */
+    z-index: 1;
+    pointer-events: none; /* Allows clicks to pass through to carousel buttons if content is over them */
+    
+    
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    color: rgba(0, 0, 0, 0.839);
+    
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+.hero-content .btn {
+    pointer-events: auto; 
+}
+
+.explore-more-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+--------carousel-------------
+
+/* --- Carousel Styles --- */
+.carousel-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place it behind the dark overlay */
+}
+
+.carousel-slide {
+    display: flex;
+    width: 400%; /* 100% for each of the 4 images */
+    height: 100%;
+    transition: transform 0.7s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 25%; /* Each image takes up a quarter of the slide container */
+    height: 100%;
+    
+    object-fit: cover; /* Ensures images fill the space without distortion */
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.prev-btn {
+    left: 1rem;
+}
+
+.next-btn {
+    right: 1rem;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.75rem;
+    z-index: 2;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: white;
+}
+
+/* --- Product Section --- */
+.product-section {
+    padding: 5rem 0;
+    background-color: #FAF9EE;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.product-card {
+    text-align: center;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.product-card:nth-child(1) { animation-delay: 0.1s; }
+.product-card:nth-child(2) { animation-delay: 0.2s; }
+.product-card:nth-child(3) { animation-delay: 0.3s; }
+.product-card:nth-child(4) { animation-delay: 0.4s; }
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.product-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 0.3s ease;
+    z-index: 1;
+}
+
+.product-card:hover .product-image::before {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.product-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.sale-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    z-index: 2; /* To appear above the overlay */
+}
+
+.product-info {
+    padding: 0 1rem 1rem;
+}
+.product-info h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.original-price {
+    text-decoration: line-through;
+    margin-right: 0.5rem;
+    color: #999;
+}
+
+/* --- Category Section --- */
+.category-section {
+    padding: 5rem 0;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.category-card {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.05);
+}
+
+.category-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+    color: var(--light-color);
+    z-index: 2;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    width: 100%;
+}
+
+.category-content h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn-underline {
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- Testimonial Section --- */
+.testimonial-section {
+    background-color:#FAF9EE;
+    padding: 4rem 0;
+    text-align: center;
+}
+.testimonial-text {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto 1rem;
+}
+.testimonial-author {
+    font-weight: 500;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: var(--dark-color);
+    color: #a0a0a0;
+    padding: 4rem 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.footer-column h3 {
+    color: var(--light-color);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+}
+
+.footer-column ul {
+    line-height: 2;
+}
+.footer-column a:hover {
+    color: var(--light-color);
+}
+
+.newsletter-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #666;
+    background: transparent;
+    color: var(--light-color);
+    margin-bottom: 0.5rem;
+}
+
+.newsletter-form button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    cursor: pointer;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #555;
+    font-size: 0.9rem;
+}
+
+/* --- Cart Page Styles --- */
+.cart-page-container {
+    padding: 4rem 1.5rem;
+}
+
+.cart-page-container h1 {
+    margin-top: 20px;
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.cart-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.item-image {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-details h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.item-details p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.item-price {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.item-quantity input {
+    width: 60px;
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.remove-item:hover {
+    color: var(--dark-color);
+}
+
+.order-summary {
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 120px;
+}
+
+.order-summary h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.summary-row, .summary-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.summary-total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.btn-checkout {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 1rem;
+}
+
+.btn-checkout:hover {
+    background-color: #b98b5a;
+}
+
+
+/* --- Animation Keyframes --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ -----------product-page----------------
+
+ /* --- Product Detail Page Styles --- */
+
+ main.homepage { /* Changed from 'main' */
+    margin-top: -108px; /* This pulls the main content up */
+}
+
+.product-detail-page {
+
+    padding: 4rem 1.5rem;
+    background-color: #FAF6E9; /* ADD THIS LINE */
+}
+
+.product-detail-layout {
+    display: flex;
+    flex-wrap: wrap; /* Allows stacking on smaller screens */
+    gap: 2rem; /* Spacing between image and details */
+    padding-top: 4rem; /* PULLS THE MAIN CONTAINER DOWN */
+    padding-bottom: 4rem;
+}
+
+.product-gallery {
+    flex: 1; /* Takes up available space */
+    min-width: 300px; /* Ensures it doesn't get too small */
+}
+
+/* Gallery Styles */
+.main-product-image {
+    width: 100%;
+    max-width: 450px; /* LIMITS THE IMAGE SIZE */
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+}
+
+.thumbnail-images {
+    display: flex;
+    gap: .5rem;
+}
+
+.thumbnail-images img {
+    width: 80px; /* Size for thumbnails */
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+.thumbnail-images .thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.thumbnail-images img:hover,
+.thumbnail-images img.active {
+    border-color: var(--color-primary);
+}
+
+/* Details Styles */
+.product-details .product-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.product-details .product-price {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.product-details .product-short-desc {
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.product-options {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.option-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.option-group select,
+.option-group input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100px;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+/* --- Products Page Styles --- */
+.products-page-header {
+    text-align: center;
+    padding: 5rem 1.5rem 3rem;
+    background-color: #FAF9EE;
+}
+
+.products-page-header h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+}
+
+/* Add some top padding to the product grid on this page */
+.products-page-header + .container .product-grid {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Responsive styles for the product page */
+@media (max-width: 768px) {
+    .product-detail-layout {
+        grid-template-columns: 1fr; /* Stack columns on mobile */
+    }
+
+    .product-details .product-title {
+        font-size: 2rem;
+    }
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 3rem; }
+    .category-grid { grid-template-columns: 1fr; }
+    .cart-layout { grid-template-columns: 1fr; }
+    .logo-text{
+        font-size: 15px;
+    }
+
+    /* Hide the desktop menu and show the hamburger */
+    .nav-links-desktop {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Style the mobile menu container */
+    .nav-links-mobile {
+        display: block;
+        width: 100%;
+        background-color: var(--light-color);
+        border-top: 1px solid #f0f0f0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+    }
+
+    /* Show the menu when active */
+    .nav-links-mobile.active {
+        max-height: 300px;
+    }
+
+    /* Styles for the list and links inside */
+    .nav-links-mobile ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+    }
+
+    .nav-links-mobile a {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+        text-transform: uppercase;
+        color: var(--dark-color);
+    }
+}
+
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
