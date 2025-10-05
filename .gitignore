@@ -1,0 +1,5 @@
+# Secret environment variables
+.env
+
+# Node.js dependencies folder
+node_modules

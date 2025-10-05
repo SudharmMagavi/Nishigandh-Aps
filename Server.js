@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 // 2. Middleware
 app.use(cors()); // Enable Cross-Origin Resource Sharing
 app.use(express.json()); // To parse JSON bodies
-// app.use(express.static(path.join(__dirname, 'public'))); // Serve your static front-end files
+app.use(express.static(path.join(__dirname, 'public'))); // Serve your static front-end files
 
 // 3. Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
@@ -82,21 +82,10 @@ async function addSampleProducts() {
 }
 
 
-// 6. Start the Server
-// app.listen(PORT, () => {
-//     console.log(`Server is running on http://localhost:${PORT}`);
-//     addSampleProducts(); // Add sample data when the server starts (if the DB is empty)
-// });
-
-
- 6.// Start the Server (for local development)
-// We comment this out for Vercel deployment.
-
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-    addSampleProducts();
+// / 6. Start the Server
+ app.listen(PORT, () => {
+     console.log(`Server is running on http://localhost:${PORT}`);
+    addSampleProducts(); // Add sample data when the server starts (if the DB is empty)
 });
 
 
-// Export the app for Vercel
-module.exports = app;

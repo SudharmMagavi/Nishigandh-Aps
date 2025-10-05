@@ -25,7 +25,7 @@ html {
 }
 body {
     font-family: var(--font-body);
-    background-color: #78aee3; /* Using a light gray from a previous step */
+    background-color: var(--light-color); /* Changed to your theme's white color */
     color: var(--dark-color);
     line-height: 1.6;
 }
@@ -269,7 +269,7 @@ img {
 .hero-content h1 {
     font-family: var(--font-heading);
     font-size: 4rem;
-    color: rgba(0, 0, 0, 0.839);
+    color: rgba(255, 252, 252, 0.948);
     
 }
 
@@ -302,6 +302,17 @@ img {
     width: 400%; /* 100% for each of the 4 images */
     height: 100%;
     transition: transform 0.7s ease-in-out;
+}
+/* Add this new rule to dim the carousel images */
+.carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust the last value (0.3) for more or less dimming */
+    z-index: 0; /* Place it above the images but below the text */
 }
 
 .carousel-slide img {
@@ -860,6 +871,88 @@ img {
     .product-details .product-title {
         font-size: 2rem;
     }
+    .product-image {
+        aspect-ratio: 1 / 1;
+    }
+
+    .product-image img {
+        height: 100%;
+    }
+
+     .product-info h3 {
+        font-size: 0.9rem; /* Reduces product title size */
+        margin-bottom: 0.25rem;
+    }
+
+    .product-info .price {
+        font-size: 0.85rem; /* Reduces price text size */
+        margin-bottom: 0.75rem;
+    }
+
+    .product-info .btn-outline {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        white-space: nowrap; /* ADD THIS LINE HERE */
+    }
+
+    .site-header, .site-header.scrolled {
+        background-color: var(--light-color);
+        backdrop-filter: none; /* Remove blur effect on mobile */
+    }
+    .home-page .site-header:not(.scrolled) .nav-links-desktop a,
+    .home-page .site-header:not(.scrolled) .nav-icons .icon,
+    .site-header .nav-icons .icon {
+        color: var(--dark-color);
+    }
+    main.homepage {
+        margin-top: 0;
+    }
+    #hero {
+        height: 50vh; /* Shorter height for a better image crop */
+        padding-top: 0;
+          background-color: var(--light-color);
+
+    }
+     .hero-content {
+        padding: 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+.carousel-container {
+        height: 100%; /* Make carousel container fill #hero */
+        width: 100%; /* Make carousel container fill #hero */
+    }
+    .carousel-slide img {
+        height: 100%; /* Ensure images fill their slide space */
+        object-fit: cover; /* Crucial: make images cover the area without distortion */
+        object-position: center; /* Center the image within its frame */
+    }
+
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-content .btn {
+        padding: 0.6rem 1.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .logo-image {
+        height: 50px;
+
+        
+    }
+    .products-page-header h1 {
+        font-size: 1.6rem;
+        margin-top: 30px;
+    }
+    .products-page-header p{
+        font-size: 1rem;
+    }
 }
 
 
@@ -899,6 +992,7 @@ img {
         overflow: hidden;
         transition: max-height 0.5s ease-in-out;
     }
+    
 
     /* Show the menu when active */
     .nav-links-mobile.active {
@@ -925,9 +1019,10 @@ img {
 }
 
 @media (max-width: 576px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
+   .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* Creates a two-column grid */
+    gap: 1rem; /* Optional: Reduces the space between cards on small screens */
+} 
     .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
